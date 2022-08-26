@@ -56,6 +56,10 @@ function M.setup()
       end,
     }
 
+		-- Documentation
+		use { "nanotee/luv-vimdocs", event = "BufReadPre" }
+    use { "milisims/nvim-luaref", event = "BufReadPre" }
+
     -- Git
     use {
       "TimUntersberger/neogit",
@@ -63,6 +67,17 @@ function M.setup()
       requires = "nvim-lua/plenary.nvim",
       config = function()
         require("config.neogit").setup()
+      end,
+    }
+
+		-- gitsigns
+    use {
+      "lewis6991/gitsigns.nvim",
+      event = "BufReadPre",
+      wants = "plenary.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("config.gitsigns")
       end,
     }
 

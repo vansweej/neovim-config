@@ -93,6 +93,18 @@ function M.setup()
       end,
     }
 
+    -- Nerdtree for neovim
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly', -- optional, updated every week. (see issue #1193)
+      config = function()
+        require("config.ntree").setup() 
+      end,
+    }
+
     -- Better Comment
     use {
       "numToStr/Comment.nvim",
@@ -115,6 +127,8 @@ function M.setup()
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
       require("packer").sync()
+    else
+      require'nvim-tree'.setup()
     end
   end
 

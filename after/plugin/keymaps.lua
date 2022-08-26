@@ -37,3 +37,4 @@ keymap("n", "<Left>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<Right>", ":vertical resize +1<CR>", default_opts)
 keymap("n", "<Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":resize +1<CR>", default_opts)
+

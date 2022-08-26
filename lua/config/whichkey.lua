@@ -47,6 +47,8 @@ function M.setup()
       name = "Git",
       s = { "<cmd>Neogit<CR>", "Status" },
     },
+
+	["n"] = { "<cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
   }
 
   whichkey.setup(conf)

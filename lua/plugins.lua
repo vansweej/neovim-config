@@ -101,7 +101,7 @@ function M.setup()
       },
       tag = 'nightly', -- optional, updated every week. (see issue #1193)
       config = function()
-        require("config.ntree").setup() 
+        require("config.ntree")
       end,
     }
 
@@ -124,11 +124,18 @@ function M.setup()
       end,
     }
 
+    use {
+      "nvim-lualine/lualine.nvim",
+      event = "VimEnter",
+      config = function()
+        require("config.statusline") 
+      end,
+      requires = { "nvim-web-devicons" },
+    }
+
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
       require("packer").sync()
-    else
-      require'nvim-tree'.setup()
     end
   end
 

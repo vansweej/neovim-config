@@ -1,22 +1,18 @@
-local M = {}
-
-function M.setup()
-  local g = vim.g
-  g.sort_by = "case_sensitive"
-  g.view = {
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
     adaptive_size = true,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
       },
     },
-  }
-  g.renderer = {
+  },
+  renderer = {
     group_empty = true,
-  }
-  g.filters = {
+  },
+  filters = {
     dotfiles = true,
-  }
-end
+  },
+})
 
-return M

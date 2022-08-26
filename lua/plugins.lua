@@ -93,6 +93,8 @@ function M.setup()
       end,
     }
 
+
+
     -- Nerdtree for neovim
     use {
       'kyazdani42/nvim-tree.lua',
@@ -131,6 +133,26 @@ function M.setup()
         require("config.statusline") 
       end,
       requires = { "nvim-web-devicons" },
+    }
+
+-- Treesitter
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      opt = true,
+      event = "BufReadPre",
+      run = ":TSUpdate",
+      config = function()
+        require("config.treesitter")
+      end,
+      requires = {
+        { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPre" },
+        { "windwp/nvim-ts-autotag", event = "InsertEnter" },
+        { "JoosepAlviste/nvim-ts-context-commentstring", event = "BufReadPre" },
+        { "p00f/nvim-ts-rainbow", event = "BufReadPre" },
+        { "RRethy/nvim-treesitter-textsubjects", event = "BufReadPre" },
+        -- { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPre" },
+        -- { "yioneko/nvim-yati", event = "BufReadPre" },
+      },
     }
 
     if packer_bootstrap then

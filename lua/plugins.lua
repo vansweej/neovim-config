@@ -108,8 +108,6 @@ function M.setup()
       end,
     }
 
-
-
     -- Nerdtree for neovim
     use {
       'kyazdani42/nvim-tree.lua',
@@ -148,6 +146,25 @@ function M.setup()
         require("config.statusline") 
       end,
       requires = { "nvim-web-devicons" },
+    }
+
+    use {
+      "nvim-telescope/telescope.nvim",
+      opt = true,
+      config = function()
+        require("config.telescope")
+      end,
+      cmd = { "Telescope" },
+      module = { "telescope", "telescope.builtin" },
+--      keys = { "<leader>f", "<leader>p", "<leader>z" },
+      wants = {
+        "plenary.nvim",
+        "telescope-fzf-native.nvim",
+      },
+      requires = {
+        "nvim-lua/plenary.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      }
     }
 
 -- Treesitter

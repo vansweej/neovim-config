@@ -48,6 +48,14 @@ function M.setup()
       s = { "<cmd>Neogit<CR>", "Status" },
     },
 
+    f = {
+      name = "Telescope",
+      f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+      g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+      b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+      h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
+    },
+
 	["n"] = { "<cmd>NvimTreeToggle<CR>", "NvimTree Toggle" },
   }
 

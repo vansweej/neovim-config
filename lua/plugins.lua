@@ -189,10 +189,21 @@ function M.setup()
 
     -- LSP
     use {
+      "neovim/nvim-lspconfig",
+      event = "BufReadPre",
+      config = function()
+        require("config.lspconf")
+      end,
+      requires = {
+        "onsails/lspkind-nvim",
+      },
+    }
+
+    use {
 			"junnplus/lsp-setup.nvim",
 			event = "BufReadPre",
       requires = {
-				{ "neovim/nvim-lspconfig" },
+				{ "neovim/nvim-lspconfig"},
 				{ "williamboman/mason.nvim" },
 				{ "williamboman/mason-lspconfig.nvim" },
       },
@@ -204,14 +215,15 @@ function M.setup()
     -- Autocompletion
     use {
 			"hrsh7th/nvim-cmp",
-  		event = "BufReadPre",
+--  		event = "BufReadPre",
 			requires = {
-        { "hrsh7th/cmp-nvim-lsp", event = "BufReadPre" },
-        { "hrsh7th/cmp-buffer", event = "BufReadPre" },
-        { "hrsh7th/cmp-path", event = "BufReadPre" },
-        { "hrsh7th/cmp-cmdline", event = "BufReadPre" },
-        { "L3MON4D3/LuaSnip", event = "BufReadPre" },
-        { "saadparwaiz1/cmp_luasnip", event = "BufReadPre" },
+				{ "neovim/nvim-lspconfig" },
+        { "hrsh7th/cmp-nvim-lsp" },
+        { "hrsh7th/cmp-buffer" },
+        { "hrsh7th/cmp-path" },
+        { "hrsh7th/cmp-cmdline" },
+        { "L3MON4D3/LuaSnip" },
+        { "saadparwaiz1/cmp_luasnip" },
       },
 		}
 

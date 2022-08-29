@@ -187,6 +187,21 @@ function M.setup()
       },
     }
 
+    -- LSP
+    use {
+			"junnplus/lsp-setup.nvim",
+      requires = {
+				{ "neovim/nvim-lspconfig", even = "BufReadPre" },
+				{ "williamboman/mason.nvim", even = "BufReadPre" },
+				{ "williamboman/mason-lspconfig.nvim", even = "BufReadPre" },
+      },
+      config = function()
+        require("config.lsp-setup")
+      end,
+    }
+
+    -- Autocompletion
+
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
       require("packer").sync()

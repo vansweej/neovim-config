@@ -190,10 +190,11 @@ function M.setup()
     -- LSP
     use {
 			"junnplus/lsp-setup.nvim",
+			event = "BufReadPre",
       requires = {
-				{ "neovim/nvim-lspconfig", even = "BufReadPre" },
-				{ "williamboman/mason.nvim", even = "BufReadPre" },
-				{ "williamboman/mason-lspconfig.nvim", even = "BufReadPre" },
+				{ "neovim/nvim-lspconfig", event = "BufReadPre" },
+				{ "williamboman/mason.nvim", event = "BufReadPre" },
+				{ "williamboman/mason-lspconfig.nvim", event = "BufReadPre" },
       },
       config = function()
         require("config.lsp-setup")
@@ -201,6 +202,19 @@ function M.setup()
     }
 
     -- Autocompletion
+    use {
+			"hrsh7th/nvim-cmp",
+			event = "BufReadPre",
+			requires = {
+        { "neovim/nvim-lspconfig", event = "BufReadPre" },
+        { "hrsh7th/cmp-nvim-lsp", event = "BufReadPre" },
+        { "hrsh7th/cmp-buffer", event = "BufReadPre" },
+        { "hrsh7th/cmp-path", event = "BufReadPre" },
+        { "hrsh7th/cmp-cmdline", event = "BufReadPre" },
+        { "L3MON4D3/LuaSnip", event = "BufReadPre" },
+        { "saadparwaiz1/cmp_luasnip", event = "BufReadPre" },
+      },
+		}
 
     if packer_bootstrap then
       print "Restart Neovim required after installation!"

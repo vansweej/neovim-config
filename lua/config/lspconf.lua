@@ -11,12 +11,12 @@ vim.o.completeopt = 'menuone,noselect'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup {
-        capabilities = capabilities,
-        on_attach = on_attach
-    }
-end
+--for _, lsp in ipairs(servers) do
+--	nvim_lsp[lsp].setup {
+--        capabilities = capabilities,
+--        on_attach = on_attach
+--    }
+--end
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

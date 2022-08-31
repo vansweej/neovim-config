@@ -24,6 +24,8 @@ opt.signcolumn = "yes:1" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
 opt.timeoutlen = 300    --  Time in milliseconds to wait for a mapped sequence to complete.
 opt.fileformats=unix,dos
+opt.splitbelow = true
+opt.splitright = true
 -- Highlight on yank
 vim.cmd [[
   augroup YankHighlight

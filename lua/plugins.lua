@@ -180,7 +180,7 @@ function M.setup()
         { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPre" },
         { "windwp/nvim-ts-autotag", event = "InsertEnter" },
         { "JoosepAlviste/nvim-ts-context-commentstring", event = "BufReadPre" },
-        { "HiPhish/nvim-ts-rainbow2", event = "BufReadPre" },
+        { "HiPhish/nvim-ts-rainbow2", event = "VimEnter" },
         { "RRethy/nvim-treesitter-textsubjects", event = "BufReadPre" },
         -- { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPre" },
         -- { "yioneko/nvim-yati", event = "BufReadPre" },
@@ -190,7 +190,7 @@ function M.setup()
     -- LSP
     use {
       "neovim/nvim-lspconfig",
-      event = "BufReadPre",
+      event = "VimEnter",
       config = function()
         require("config.lspconf")
       end,

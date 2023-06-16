@@ -167,6 +167,12 @@ function M.setup()
       }
     }
 
+-- ts-rainbow2
+--    use {
+--      "HiPhish/nvim-ts-rainbow2",
+--      event = "VimEnter",
+--    }
+
 -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
@@ -185,6 +191,7 @@ function M.setup()
         -- { "nvim-treesitter/nvim-treesitter-context", event = "BufReadPre" },
         -- { "yioneko/nvim-yati", event = "BufReadPre" },
       },
+--      after = "nvim-ts-rainbow2"
     }
 
     -- LSP

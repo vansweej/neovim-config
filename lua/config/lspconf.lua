@@ -65,4 +65,4 @@ cmp.setup {
     },
 }
 
-
+require'lspconfig'.hls.setup{}

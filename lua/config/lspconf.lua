@@ -66,3 +66,4 @@ cmp.setup {
 }
 
 require'lspconfig'.hls.setup{}
+require'lspconfig'.rust_analyzer.setup{}

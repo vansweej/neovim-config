@@ -120,11 +120,15 @@ require("nvim-treesitter").setup({
       enable = true,
     },
 
-    -- context_commentstring
-    context_commentstring = {
-      enable = true,
+    require('ts_context_commentstring').setup {
       enable_autocmd = false,
-    },
+    }
+
+    -- context_commentstring
+    -- context_commentstring = {
+    --  enable = true,
+    --  enable_autocmd = false,
+    --},
 
     -- indent
     -- yati = { enable = true },

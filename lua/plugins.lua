@@ -173,6 +173,11 @@ function M.setup()
 --      event = "VimEnter",
 --    }
 
+-- nvim-ts-context-commentstring
+    use {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    }
+
 -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
